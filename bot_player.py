@@ -1,4 +1,7 @@
-#!/usr/bin/env python3
+# Tic-Tac-Toe GUI
+# MINIMAX Computer AI Opponent
+# By Jace Call
+
 from math import inf as infinity
 from random import choice
 import platform

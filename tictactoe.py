@@ -1,11 +1,14 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import pyqtSlot, QObject
-import numpy
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QMessageBox, QApplication, QHBoxLayout
+# Tic-Tac-Toe GUI
+# MINIMAX Computer AI Opponent
+# By Jace Call
+
 import pickle
-import random
+import numpy
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMessageBox, QApplication
 from bot_player import *
+
 
 class startButton(QtWidgets.QToolButton):
     def __init__(self, UI, Frame, *_args):
@@ -147,7 +150,7 @@ class Ui_Frame(object):
         self.start_button.setGeometry(QtCore.QRect(202, 60, 90, 16))
         # BUGGY With AI
         self.label2 = QtWidgets.QLabel(Frame)
-        self.label2.setGeometry(QtCore.QRect(350, 30, 81, 16))
+        self.label2.setGeometry(QtCore.QRect(300, 30, 81, 16))
         self.label.setObjectName("label")
         self.label2.setText("Go -> ")
         self.label2.setStyleSheet('font:  16pt "Chalkboard"; color:#f70000')
@@ -156,16 +159,18 @@ class Ui_Frame(object):
         self.xLabel = QtWidgets.QLabel(Frame)
         xpix = QPixmap("Resources/x.png")
         self.xLabel.setPixmap(xpix.scaledToHeight(50))
-        self.xLabel.move(400, 15)
+        self.xLabel.move(425, 15)
         if self.USE_AI:
             self.xLabel.hide()
 
 
         self.mode_combo = QtWidgets.QComboBox(Frame)
+        self.mode_combo.setStyleSheet('font:  16pt bold "Arial Rounded MT"; color:white')
+
         self.mode_combo.addItem("AI")
         self.mode_combo.addItem("PVP")
         self.mode_combo.currentIndexChanged.connect(self.selectionchange)
-        self.mode_combo.move(400, 10)
+        self.mode_combo.move(405, 10)
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
         self.board = [[self.space, self.space_2, self.space_3], [self.space_4 , self.space_5, self.space_6], [self.space_7, self.space_8, self.space_9]]
@@ -186,7 +191,7 @@ class Ui_Frame(object):
             board_vals.append(vals)
         self.turn = not self.turn
         if self.left_num >= len(self.buttons):
-            self.showdialog("TIE!!", "CATS GAME\n(No More Spaces Available)")
+            self.showdialog("TIE!", "CATS GAME\n(No More Spaces Available)")
         else:
             self.check_board(board_vals)
         self.text_vals = board_vals
@@ -246,7 +251,7 @@ class Ui_Frame(object):
 
     def retranslateUi(self, Frame):
         _translate = QtCore.QCoreApplication.translate
-        Frame.setWindowTitle(_translate("Frame", "Frame"))
+        Frame.setWindowTitle(_translate("Frame", "TIC-TAC-TOE"))
         self.space.setText(_translate("Frame", "---"))
         self.space_2.setText(_translate("Frame", "---"))
         self.space_3.setText(_translate("Frame", "---"))

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0da014f-de9a-483b-ae86-7f802dc2c52c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/state.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot_player.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot_player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tictactoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +15,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -33,6 +34,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Python.tictactoe">
@@ -159,7 +165,7 @@
       <workItem from="1576452388967" duration="52000" />
       <workItem from="1576452449628" duration="24000" />
       <workItem from="1576452482232" duration="8265000" />
-      <workItem from="1576474662302" duration="21189000" />
+      <workItem from="1576474662302" duration="22564000" />
     </task>
     <servers />
   </component>
@@ -167,26 +173,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="819" height="100" key="GridCell.Tab.0.bottom" timestamp="1576504551908">
+    <state x="304" y="198" width="1071" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576504713083">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="304" y="198" width="1071" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1576504713083" />
+    <state width="819" height="100" key="GridCell.Tab.0.bottom" timestamp="1576506179452">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709489" />
-    <state width="819" height="100" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1576504551908" />
-    <state width="819" height="100" key="GridCell.Tab.0.center" timestamp="1576504551907">
+    <state width="819" height="100" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1576506179452" />
+    <state width="819" height="100" key="GridCell.Tab.0.center" timestamp="1576506179451">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709488" />
-    <state width="819" height="100" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1576504551907" />
-    <state width="819" height="100" key="GridCell.Tab.0.left" timestamp="1576504551906">
+    <state width="819" height="100" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1576506179451" />
+    <state width="819" height="100" key="GridCell.Tab.0.left" timestamp="1576506179451">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709488" />
-    <state width="819" height="100" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1576504551906" />
-    <state width="819" height="100" key="GridCell.Tab.0.right" timestamp="1576504551908">
+    <state width="819" height="100" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1576506179451" />
+    <state width="819" height="100" key="GridCell.Tab.0.right" timestamp="1576506179452">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709489" />
-    <state width="819" height="100" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1576504551908" />
+    <state width="819" height="100" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1576506179452" />
     <state width="819" height="345" key="GridCell.Tab.1.bottom" timestamp="1576492674337">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -222,25 +232,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tictactoe.py</url>
-          <line>290</line>
+          <line>295</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tictactoe.py</url>
-          <line>283</line>
+          <line>288</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bot_player.py</url>
-          <line>201</line>
+          <line>204</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bot_player.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Chess$bot_player.coverage" NAME="bot_player Coverage Results" MODIFIED="1576491134126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Chess$tictactoe.coverage" NAME="tictactoe Coverage Results" MODIFIED="1576504456581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Chess$tictactoe.coverage" NAME="tictactoe Coverage Results" MODIFIED="1576505698168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Chess$demo.coverage" NAME="demo Coverage Results" MODIFIED="1576450185402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Chess$untitled.coverage" NAME="untitled Coverage Results" MODIFIED="1576449080986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

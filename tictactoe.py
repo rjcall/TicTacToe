@@ -4,6 +4,9 @@ import numpy
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMessageBox, QApplication, QHBoxLayout
 import pickle
+import random
+from bot_player import *
+USE_AI = True
 
 class resetButton(QtWidgets.QToolButton):
     def __init__(self, UI, Frame, *_args):
@@ -68,7 +71,6 @@ class Ui_Frame(object):
     left_num = 0
     players = ["X", "O"]
     text_vals = [["---","---","---"] for x in range(3)]
-
 
     def setupUi(self, Frame):
         Frame.setObjectName("Frame")
@@ -158,10 +160,6 @@ class Ui_Frame(object):
         self.text_vals = board_vals
 
 
-
-
-
-
     def check(self, result, location, num):
         if len(set(result))==1 and result[0] != "---":
             self.showdialog(f'Player {result[0]} has won the game.',f'{location} {num}')
@@ -239,6 +237,28 @@ class Ui_Frame(object):
         self.show_turn()
         self.check_board(self.text_vals)
 
+    def reload_board(self):
+        board_vals = []
+        for x in self.board:
+            vals = []
+            for button in x:
+                vals.append(button.text())
+            board_vals.append(vals)
+        self.text_vals = board_vals
+
+    def bot_move(self):
+        self.reload_board()
+        board = get_board(self.text_vals)
+        depth = 9-self.left_num
+        if depth == 9:
+            x = choice([0, 1, 2])
+            y = choice([0, 1, 2])
+        else:
+            move = minimax(board, depth, COMP)
+            x, y = move[0], move[1]
+        print(f"{x},{y}")
+        self.board[x][y].click()
+
     def show_turn(self):
         npa = numpy.array(self.text_vals).flatten()
         xc = list(npa).count("X")
@@ -252,13 +272,12 @@ class Ui_Frame(object):
 
         if self.turn or self.left_num==0:
             xpix = QPixmap("Resources/x.png")
+            if USE_AI:
+                self.text_vals = [["---", "---", "---"] for x in range(3)]
+                self.bot_move()
         else:
             xpix = QPixmap("Resources/o.png")
         self.xLabel.setPixmap(xpix.scaledToHeight(50))
-
-
-
-
 
 
 if __name__ == "__main__":
@@ -268,4 +287,5 @@ if __name__ == "__main__":
     ui = Ui_Frame()
     ui.setupUi(Frame)
     Frame.show()
+    ui.show_turn()
     sys.exit(app.exec_())

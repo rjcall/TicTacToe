@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 pyqt5=">= 5.13"
 numpy = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.7"

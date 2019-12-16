@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0da014f-de9a-483b-ae86-7f802dc2c52c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot_player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/state.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tictactoe.py" beforeDir="false" afterPath="$PROJECT_DIR$/tictactoe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +159,7 @@
       <workItem from="1576452388967" duration="52000" />
       <workItem from="1576452449628" duration="24000" />
       <workItem from="1576452482232" duration="8265000" />
-      <workItem from="1576474662302" duration="17253000" />
+      <workItem from="1576474662302" duration="21189000" />
     </task>
     <servers />
   </component>
@@ -170,26 +167,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="819" height="294" key="GridCell.Tab.0.bottom" timestamp="1576492707711">
+    <state width="819" height="100" key="GridCell.Tab.0.bottom" timestamp="1576504456588">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709489" />
-    <state width="819" height="294" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1576492707711" />
-    <state width="819" height="294" key="GridCell.Tab.0.center" timestamp="1576492707710">
+    <state width="819" height="100" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1576504456588" />
+    <state width="819" height="100" key="GridCell.Tab.0.center" timestamp="1576504456588">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709488" />
-    <state width="819" height="294" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1576492707710" />
-    <state width="819" height="294" key="GridCell.Tab.0.left" timestamp="1576492707709">
+    <state width="819" height="100" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1576504456588" />
+    <state width="819" height="100" key="GridCell.Tab.0.left" timestamp="1576504456587">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709488" />
-    <state width="819" height="294" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1576492707709" />
-    <state width="819" height="294" key="GridCell.Tab.0.right" timestamp="1576492707710">
+    <state width="819" height="100" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1576504456587" />
+    <state width="819" height="100" key="GridCell.Tab.0.right" timestamp="1576504456588">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state width="819" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1576457709489" />
-    <state width="819" height="294" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1576492707710" />
+    <state width="819" height="100" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1576504456588" />
     <state width="819" height="345" key="GridCell.Tab.1.bottom" timestamp="1576492674337">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -225,17 +222,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tictactoe.py</url>
-          <line>258</line>
+          <line>290</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tictactoe.py</url>
-          <line>251</line>
+          <line>283</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bot_player.py</url>
-          <line>210</line>
+          <line>201</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
@@ -243,7 +240,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Chess$bot_player.coverage" NAME="bot_player Coverage Results" MODIFIED="1576491134126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Chess$tictactoe.coverage" NAME="tictactoe Coverage Results" MODIFIED="1576492674324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Chess$tictactoe.coverage" NAME="tictactoe Coverage Results" MODIFIED="1576504456581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Chess$demo.coverage" NAME="demo Coverage Results" MODIFIED="1576450185402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Chess$untitled.coverage" NAME="untitled Coverage Results" MODIFIED="1576449080986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

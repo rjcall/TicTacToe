@@ -6,7 +6,18 @@ from PyQt5.QtWidgets import QMessageBox, QApplication, QHBoxLayout
 import pickle
 import random
 from bot_player import *
-USE_AI = True
+
+class startButton(QtWidgets.QToolButton):
+    def __init__(self, UI, Frame, *_args):
+        super().__init__(Frame)
+        self.UI = UI
+        self.clicked.connect(self.action)
+
+    def action(self):
+        self.UI.reset()
+        self.UI.show_turn()
+        if self.UI.left_num > 0:
+            self.hide()
 
 class resetButton(QtWidgets.QToolButton):
     def __init__(self, UI, Frame, *_args):
@@ -49,6 +60,7 @@ class myButton(QtWidgets.QPushButton):
     def __init__(self, UI, Frame, *__args):
         super().__init__(Frame)
         self.setStyleSheet("background:grey")
+        self.setStyleSheet('font:  30pt "Chalkboard"; color:#f70000')
         self.UI = UI
         self.clicked.connect(self.action)
 
@@ -71,11 +83,12 @@ class Ui_Frame(object):
     left_num = 0
     players = ["X", "O"]
     text_vals = [["---","---","---"] for x in range(3)]
+    USE_AI = True
 
     def setupUi(self, Frame):
         Frame.setObjectName("Frame")
         Frame.resize(476, 409)
-        Frame.setMinimumSize(QtCore.QSize(476, 409))
+        Frame.setMinimumSize(QtCore.QSize(476, 450))
         Frame.setMaximumSize(QtCore.QSize(476, 500))
         self.space = myButton(self, Frame)
         self.space.setGeometry(QtCore.QRect(40, 100, 121, 91))
@@ -129,21 +142,40 @@ class Ui_Frame(object):
         self.load.move(50,10)
         self.reset_button.move(90,10)
 
+        self.start_button = startButton(self, Frame)
+        self.start_button.setText("Start")
+        self.start_button.setGeometry(QtCore.QRect(202, 60, 90, 16))
+        # BUGGY With AI
         self.label2 = QtWidgets.QLabel(Frame)
         self.label2.setGeometry(QtCore.QRect(350, 30, 81, 16))
         self.label.setObjectName("label")
-
         self.label2.setText("Go -> ")
         self.label2.setStyleSheet('font:  16pt "Chalkboard"; color:#f70000')
-
+        if self.USE_AI:
+            self.label2.hide()
         self.xLabel = QtWidgets.QLabel(Frame)
         xpix = QPixmap("Resources/x.png")
         self.xLabel.setPixmap(xpix.scaledToHeight(50))
         self.xLabel.move(400, 15)
+        if self.USE_AI:
+            self.xLabel.hide()
 
+
+        self.mode_combo = QtWidgets.QComboBox(Frame)
+        self.mode_combo.addItem("AI")
+        self.mode_combo.addItem("PVP")
+        self.mode_combo.currentIndexChanged.connect(self.selectionchange)
+        self.mode_combo.move(400, 10)
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
         self.board = [[self.space, self.space_2, self.space_3], [self.space_4 , self.space_5, self.space_6], [self.space_7, self.space_8, self.space_9]]
+
+    def selectionchange(self, i):
+        if i==0:
+            self.USE_AI = True
+        elif i == 1:
+            self.USE_AI = False
+        self.show_turn()
 
     def clicker(self):
         board_vals = []
@@ -258,12 +290,19 @@ class Ui_Frame(object):
             x, y = move[0], move[1]
         print(f"{x},{y}")
         self.board[x][y].click()
+        time.sleep(.5)
+        self.show_turn()
 
     def show_turn(self):
+        if self.mode_combo.currentIndex()==0:
+            self.USE_AI = True
+        else:
+            self.USE_AI=False
+
         npa = numpy.array(self.text_vals).flatten()
         xc = list(npa).count("X")
         oc = list(npa).count("O")
-        if self.left_num ==0:
+        if self.left_num == 0:
             self.turn=True
         elif oc>=xc:
             self.turn = True
@@ -272,12 +311,15 @@ class Ui_Frame(object):
 
         if self.turn or self.left_num==0:
             xpix = QPixmap("Resources/x.png")
-            if USE_AI:
+            if self.USE_AI:
                 self.text_vals = [["---", "---", "---"] for x in range(3)]
                 self.bot_move()
         else:
             xpix = QPixmap("Resources/o.png")
         self.xLabel.setPixmap(xpix.scaledToHeight(50))
+        if self.USE_AI:
+            self.xLabel.hide()
+
 
 
 if __name__ == "__main__":
@@ -287,5 +329,4 @@ if __name__ == "__main__":
     ui = Ui_Frame()
     ui.setupUi(Frame)
     Frame.show()
-    ui.show_turn()
     sys.exit(app.exec_())
